@@ -30,7 +30,7 @@ def Banach(func,M,a0,b0,depth):
 
         nIterations = depth
 
-        #Kernel algorythm
+        #Kernel algorithm
         for i in range(nIterations):
             #Création des sous-intervalles dichotomiques
             x.append(x[i] - func(x[i])/M)
