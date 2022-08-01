@@ -11,7 +11,10 @@ def polynomial(x):
 def exponential(x):
     return (3**x-1)    
     
-def Banach(func,M,a0,b0,depth):
+def Banach(func,M,a0,b0,nIterations):
+    #Entree : fonction, pente maximale lischitzienne, l'extrêmité gauche de l'intervalle fermé, l'extrêmité droite de l'intervalle fermé, nombre d'itérations ("profondeur").
+    #Sortie : void.
+    #Résultat : constrution de liste contenant les valeurs de la suite itérative.
     # Conditions : Intervalle fermé ; fonction monotone, fonction m-infra-Lipschizienne, M-supra-Lipschitzienne ; contraste de signe
     
     print("La fonction est supposée monotone et la pente de toute corde sur sa courbe est bornée inférieurement et supérieurement")
@@ -23,16 +26,14 @@ def Banach(func,M,a0,b0,depth):
             return(-1) #code d'erreur
     else:
         #Initialsation des variables
-        verbose1="Séquence définie sur toutes les "+ str(depth) +" itérations"
+        verbose1="Séquence définie sur toutes les "+ str(nIterations) +" itérations"
         x0=a0+(b0-a0)*random() #Le choix du programme est de prendre le point de départ ad hoc dans de l'intervalle
         print("premier point : ( " + str(x0) + " , " + str(func(x0)) + " )\n")
         x=[x0]
 
-        nIterations = depth
-
         #Kernel algorithm
         for i in range(nIterations):
-            #Création des sous-intervalles dichotomiques
+            #Equation itérative caractéristique
             x.append(x[i] - func(x[i])/M)
         
         #Sortie

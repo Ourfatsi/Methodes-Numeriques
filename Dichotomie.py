@@ -15,7 +15,10 @@ def sinus(x):
 def polynomial(x):
     return (x*(x-math.pi)*(x+3))
     
-def dichotomie(func,a0,b0,depth):
+def dichotomie(func,a0,b0,nIterations):
+    #Entree : fonction, l'extrêmité gauche de l'intervalle fermé, l'extrêmité droite de l'intervalle fermé, nombre d'itérations ("profondeur").
+    #Sortie : void.
+    #Résultat : constrution de liste contenant les valeurs de la suite itérative.
     # Conditions : Intervalle fermé ; fonction continue ; contraste de signe
     #Test de contraste de signes
     if(func(a0) == 0): print("Zero a la limite gauche de l'intervalle")
@@ -26,12 +29,12 @@ def dichotomie(func,a0,b0,depth):
             return(-1) #code d'erreur
     else:
         #Initialsation des variables
-        verbose1="Séquence définie sur toutes les "+ str(depth) +" itérations"
+        verbose1="Séquence définie sur toutes les "+ str(nIterations) +" itérations"
         a=[a0]
         b=[b0]
         x=[]
              
-        nIterations = depth
+        nIterations
 
         #Kernel algorithm
         for i in range(nIterations):
