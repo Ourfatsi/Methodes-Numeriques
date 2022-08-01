@@ -33,8 +33,6 @@ def dichotomie(func,a0,b0,nIterations):
         a=[a0]
         b=[b0]
         x=[]
-             
-        nIterations
 
         #Kernel algorithm
         for i in range(nIterations):
